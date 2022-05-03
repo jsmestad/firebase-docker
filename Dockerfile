@@ -24,14 +24,14 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-FROM node:18-alpine AS app-env
+FROM alpine:3.15 AS app-env
 
 # LABEL "maintainer"="developers@spine.io"
 # LABEL "version"="1.1.3"
 # LABEL "io.spine.emulator"="Firebase"
 
 # RUN apk add --update --no-cache python3 py3-pip openjdk11-jre bash && \
-RUN apk add --update --no-cache openjdk11-jre bash && \
+RUN apk add --update --no-cache nodejs npm openjdk11-jre bash && \
     npm install -g firebase-tools && \
     firebase setup:emulators:database && \
     firebase setup:emulators:firestore && \
