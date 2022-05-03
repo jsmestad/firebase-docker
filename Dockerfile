@@ -36,8 +36,7 @@ RUN apk add --update --no-cache python3 py3-pip openjdk11-jre bash && \
     firebase setup:emulators:firestore && \
     firebase setup:emulators:pubsub && \
     firebase setup:emulators:storage && \
-    firebase setup:emulators:ui && \
-    rm -rf /var/cache/apk/*
+    firebase setup:emulators:ui
 
 ENV GCP_PROJECT="change-me"
 ENV RDB_EMULATOR_PORT="9000"
