@@ -32,7 +32,7 @@ FROM alpine:3.15 AS app-env
 
 # RUN apk add --update --no-cache python3 py3-pip openjdk11-jre bash && \
 RUN apk add --update --no-cache openjdk11-jre bash && \
-    npm install -g firebase-tools@10 && \
+    npm install -g firebase-tools@10.6 && \
     firebase setup:emulators:database && \
     firebase setup:emulators:firestore && \
     firebase setup:emulators:pubsub && \
