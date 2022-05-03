@@ -32,12 +32,12 @@ FROM alpine:3.15 AS app-env
 
 # RUN apk add --update --no-cache python3 py3-pip openjdk11-jre bash && \
 RUN apk add --update --no-cache nodejs npm openjdk11-jre bash && \
-    npm install -g firebase-tools && \
-    firebase setup:emulators:database && \
-    firebase setup:emulators:firestore && \
-    firebase setup:emulators:pubsub && \
-    firebase setup:emulators:storage && \
-    firebase setup:emulators:ui
+    npm install -g firebase-tools
+#&& \
+# firebase setup:emulators:database && \
+# firebase setup:emulators:firestore && \
+# firebase setup:emulators:pubsub && \
+# firebase setup:emulators:storage
 
 ENV GCP_PROJECT="change-me"
 ENV RDB_EMULATOR_PORT="9000"
