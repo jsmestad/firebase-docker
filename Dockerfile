@@ -24,7 +24,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-FROM alpine:3.15 AS app-env
+FROM alpine:3.16 AS app-env
 
 # LABEL "maintainer"="developers@spine.io"
 # LABEL "version"="1.1.3"
@@ -32,7 +32,7 @@ FROM alpine:3.15 AS app-env
 
 # RUN apk add --update --no-cache python3 py3-pip openjdk11-jre bash && \
 RUN apk add --update --no-cache nodejs npm openjdk11-jre bash && \
-    npm install -g firebase-tools@10.6.0 && \
+    npm install -g firebase-tools@11.8.1 && \
     firebase setup:emulators:database && \
     firebase setup:emulators:firestore && \
     firebase setup:emulators:pubsub && \
